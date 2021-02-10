@@ -1,5 +1,3 @@
-package calculator;
-
 class AddExpression extends BinaryExpression {
    public static final String operator = "add";
 

@@ -1,5 +1,3 @@
-package calculator;
-
 public class Calculator
 {
    private static final String STANDARD_HEADER =

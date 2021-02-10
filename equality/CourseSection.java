@@ -1,7 +1,4 @@
-package equality;
-
 import java.time.LocalTime;
-
 class CourseSection
 {
    private final String prefix;
@@ -11,7 +8,7 @@ class CourseSection
    private final LocalTime endTime;
 
    public CourseSection(final String prefix, final String number,
-      final int enrollment, final LocalTime startTime, final LocalTime endTime)
+                        final int enrollment, final LocalTime startTime, final LocalTime endTime)
    {
       this.prefix = prefix;
       this.number = number;
@@ -25,10 +22,10 @@ class CourseSection
    {
       if (o != null && o instanceof CourseSection)
          if (this.prefix == ((CourseSection) o).prefix &&
-            this.number == ((CourseSection) o).number &&
-            this.enrollment == ((CourseSection) o).enrollment &&
-            this.startTime.equals(((CourseSection) o).startTime) &&
-            this.endTime.equals(((CourseSection) o).endTime))
+                 this.number == ((CourseSection) o).number &&
+                 this.enrollment == ((CourseSection) o).enrollment &&
+                 this.startTime.equals(((CourseSection) o).startTime) &&
+                 this.endTime.equals(((CourseSection) o).endTime))
             return true;
       return false;
    }
@@ -38,3 +35,4 @@ class CourseSection
       return prefix.hashCode() + number.hashCode() + enrollment + startTime.hashCode() + endTime.hashCode();
    }
 }
+

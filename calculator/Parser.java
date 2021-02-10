@@ -1,5 +1,3 @@
-package calculator;
-
 class Parser
 {
    private final Scanner scanner;
@@ -143,7 +141,7 @@ class Parser
    }
 
    private static Expression newBinaryOp(final int tkcode,
-                                         final Expression lft, final Expression rht)
+      final Expression lft, final Expression rht)
    {
       Expression e = null;
       switch (tkcode)

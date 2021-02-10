@@ -1,5 +1,3 @@
-package calculator;
-
 class DivideExpression extends BinaryExpression
 {
    public static final String operator = "div";

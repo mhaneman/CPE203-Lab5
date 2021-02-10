@@ -1,5 +1,3 @@
-package calculator;
-
 class SubtractExpression extends BinaryExpression
 {
    public static final String operator = "sub";

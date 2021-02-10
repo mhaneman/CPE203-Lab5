@@ -1,5 +1,3 @@
-package equality;
-
 import java.util.List;
 
 class Student
@@ -10,7 +8,7 @@ class Student
    private final List<CourseSection> currentCourses;
 
    public Student(final String surname, final String givenName, final int age,
-      final List<CourseSection> currentCourses)
+                  final List<CourseSection> currentCourses)
    {
       this.surname = surname;
       this.givenName = givenName;

@@ -1,5 +1,3 @@
-package calculator;
-
 class MultiplyExpression extends BinaryExpression
 {
    public static final String operator = "mult";

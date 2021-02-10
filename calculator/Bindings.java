@@ -1,5 +1,3 @@
-package calculator;
-
 interface Bindings
 {
    void addBinding(String id, double value);
