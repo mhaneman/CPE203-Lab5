@@ -1,6 +1,6 @@
 class MultiplyExpression extends BinaryExpression
 {
-   public static final String operator = "mult";
+   public static final String operator = "x";
    public MultiplyExpression(final Expression lft, final Expression rht)
    {
       super(lft, rht, operator);

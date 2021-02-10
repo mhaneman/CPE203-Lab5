@@ -1,6 +1,6 @@
 class SubtractExpression extends BinaryExpression
 {
-   public static final String operator = "sub";
+   public static final String operator = "-";
    public SubtractExpression(final Expression lft, final Expression rht)
    {
       super(lft, rht, operator);

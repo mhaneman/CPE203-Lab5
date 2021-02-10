@@ -1,5 +1,5 @@
 class AddExpression extends BinaryExpression {
-   public static final String operator = "add";
+   public static final String operator = "+";
 
    public AddExpression(final Expression lft, final Expression rht)
    {
