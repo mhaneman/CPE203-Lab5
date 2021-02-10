@@ -14,7 +14,7 @@ public abstract class BinaryExpression implements Expression
 
     protected abstract double applyOperator(double lft, double rht);
 
-    public String toString(String opp)
+    public String toString()
     {
         return "(" + lft + " " + opp + " " + rht + ")";
     }
