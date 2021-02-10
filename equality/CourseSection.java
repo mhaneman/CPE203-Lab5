@@ -21,14 +21,20 @@ class CourseSection
    }
 
    // additional likely methods not defined since they are not needed for testing
-   public void equals()
+   public boolean equals(Object o)
    {
-
+      if (o != null && o instanceof CourseSection)
+         if (this.prefix == ((CourseSection) o).prefix &&
+            this.number == ((CourseSection) o).number &&
+            this.enrollment == ((CourseSection) o).enrollment &&
+            this.startTime.equals(((CourseSection) o).startTime) &&
+            this.endTime.equals(((CourseSection) o).endTime))
+            return true;
+      return false;
    }
 
    public int hashCode()
    {
-
-      return 0;
+      return prefix.hashCode() + number.hashCode() + enrollment + startTime.hashCode() + endTime.hashCode();
    }
 }

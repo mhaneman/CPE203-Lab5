@@ -18,13 +18,13 @@ class Student
       this.currentCourses = currentCourses;
    }
 
-   public boolean equals()
+   public boolean equals(Object o)
    {
-      return false;
+      return this.equals(o);
    }
 
    public int hashCode()
    {
-      return 0;
+      return surname.hashCode() + givenName.hashCode() + age + currentCourses.hashCode();
    }
 }
