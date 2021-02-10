@@ -18,6 +18,8 @@ class Student
 
    public boolean equals(Object o)
    {
+      if(o == null)
+         return false;
       return this.equals(o);
    }
 

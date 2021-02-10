@@ -21,8 +21,8 @@ class CourseSection
    public boolean equals(Object o)
    {
       if (o != null && o instanceof CourseSection)
-         if (this.prefix == ((CourseSection) o).prefix &&
-                 this.number == ((CourseSection) o).number &&
+         if (this.prefix.equals(((CourseSection) o).prefix) &&
+                 this.number.equals(((CourseSection) o).number) &&
                  this.enrollment == ((CourseSection) o).enrollment &&
                  this.startTime.equals(((CourseSection) o).startTime) &&
                  this.endTime.equals(((CourseSection) o).endTime))
@@ -32,7 +32,22 @@ class CourseSection
 
    public int hashCode()
    {
-      return prefix.hashCode() + number.hashCode() + enrollment + startTime.hashCode() + endTime.hashCode();
+      return hashSTR(prefix) + hashSTR(number) + enrollment + hashLocalTime(startTime) + hashLocalTime(endTime);
+   }
+
+   private int hashSTR(String str)
+   {
+      int result = 0;
+      for(char i : str.toCharArray())
+      {
+         result += (int)i * (result + 1);
+      }
+      return result;
+
+   }
+   private int hashLocalTime(LocalTime time)
+   {
+      return (time.getHour()*3600 + time.getMinute()*60 + time.getSecond())*time.getNano();
    }
 }
 
