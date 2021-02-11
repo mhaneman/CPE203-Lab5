@@ -34,10 +34,14 @@ class CourseSection
    @Override
    public int hashCode() {
       int result = prefix.hashCode();
-      result = 31 * result + number.hashCode();
-      result = 31 * result + enrollment;
-      result = 31 * result + startTime.hashCode();
-      result = 31 * result + endTime.hashCode();
+      if(prefix != null)
+         result = 31 * result + number.hashCode();
+      if(number != null)
+         result = 31 * result + enrollment;
+      if(startTime != null)
+         result = 31 * result + startTime.hashCode();
+      if(endTime != null)
+         result = 31 * result + endTime.hashCode();
       return result;
    }
 }
