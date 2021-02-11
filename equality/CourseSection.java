@@ -17,37 +17,28 @@ class CourseSection
       this.endTime = endTime;
    }
 
-   // additional likely methods not defined since they are not needed for testing
-   public boolean equals(Object o)
-   {
-      if (o != null && o instanceof CourseSection)
-         if (this.prefix.equals(((CourseSection) o).prefix) &&
-                 this.number.equals(((CourseSection) o).number) &&
-                 this.enrollment == ((CourseSection) o).enrollment &&
-                 this.startTime.equals(((CourseSection) o).startTime) &&
-                 this.endTime.equals(((CourseSection) o).endTime))
-            return true;
-      return false;
+   @Override
+   public boolean equals(Object o) {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) return false;
+
+      CourseSection that = (CourseSection) o;
+
+      if (enrollment != that.enrollment) return false;
+      if (!prefix.equals(that.prefix)) return false;
+      if (!number.equals(that.number)) return false;
+      if (!startTime.equals(that.startTime)) return false;
+      return endTime.equals(that.endTime);
    }
 
-   public int hashCode()
-   {
-      return hashSTR(prefix) + hashSTR(number) + enrollment + hashLocalTime(startTime) + hashLocalTime(endTime);
-   }
-
-   private int hashSTR(String str)
-   {
-      int result = 0;
-      for(char i : str.toCharArray())
-      {
-         result += (int)i * (result + 1);
-      }
+   @Override
+   public int hashCode() {
+      int result = prefix.hashCode();
+      result = 31 * result + number.hashCode();
+      result = 31 * result + enrollment;
+      result = 31 * result + startTime.hashCode();
+      result = 31 * result + endTime.hashCode();
       return result;
-
-   }
-   private int hashLocalTime(LocalTime time)
-   {
-      return (time.getHour()*3600 + time.getMinute()*60 + time.getSecond())*time.getNano();
    }
 }
 

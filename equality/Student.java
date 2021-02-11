@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Objects;
 
 class Student
 {
@@ -16,15 +17,19 @@ class Student
       this.currentCourses = currentCourses;
    }
 
-   public boolean equals(Object o)
-   {
-      if(o == null)
-         return false;
-      return this.equals(o);
+   @Override
+   public boolean equals(Object o) {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) return false;
+      Student student = (Student) o;
+      return age == student.age &&
+              Objects.equals(surname, student.surname) &&
+              Objects.equals(givenName, student.givenName) &&
+              Objects.equals(currentCourses, student.currentCourses);
    }
 
-   public int hashCode()
-   {
-      return surname.hashCode() + givenName.hashCode() + age + currentCourses.hashCode();
+   @Override
+   public int hashCode() {
+      return Objects.hash(surname, givenName, age, currentCourses);
    }
 }
