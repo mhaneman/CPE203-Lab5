@@ -33,11 +33,12 @@ class CourseSection
 
    @Override
    public int hashCode() {
-      int result = prefix.hashCode();
+      int result = 7;
       if(prefix != null)
-         result = 31 * result + number.hashCode();
+         result = 31 * result + prefix.hashCode();
       if(number != null)
-         result = 31 * result + enrollment;
+         result = 31 * result + number.hashCode();
+      result = 31 * result + enrollment;
       if(startTime != null)
          result = 31 * result + startTime.hashCode();
       if(endTime != null)
